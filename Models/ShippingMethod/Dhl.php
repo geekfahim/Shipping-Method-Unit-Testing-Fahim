@@ -7,11 +7,15 @@ require_once 'vendor/autoload.php';
 
 class Dhl
 {
-
-    public function calculate($weight)
+    protected  $weight;
+    public function getWeight(int $weight)
     {
-        $deliveryCharge =  $weight*3 + 100 ;
-        return $deliveryCharge;
+        $this->weight = $weight;
+    }
+
+    public function calculate():int|float
+    {
+        return $this->weight*3 + 100;
     }
 
 

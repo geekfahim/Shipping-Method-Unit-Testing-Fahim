@@ -3,7 +3,7 @@ declare (strict_types = 1);
 
 namespace App;
 
-require_once 'vendor/autoload.php';
+require_once __DIR__ . "/../vendor/autoload.php";
 
 use App\ShippingMethod\Dhl;
 use App\ShippingMethod\Pathao;
@@ -24,4 +24,4 @@ class Customer {
 }
 
 $data = new Customer();
-echo $data->deliveryCharge('dhl');
+echo $data->deliveryCharge('pathao');
