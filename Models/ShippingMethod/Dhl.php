@@ -1,17 +1,16 @@
 <?php
 
 declare(strict_types=1);
+
 namespace App\ShippingMethod;
+
+use App\ProductAbstract;
+use App\ShippingChargeInterface;
+
 require_once 'vendor/autoload.php';
 
-class Dhl
+class Dhl extends ProductAbstract implements ShippingChargeInterface
 {
-    protected $weight;
-
-    public function getWeight(int $weight)
-    {
-        $this->weight = $weight;
-    }
 
     public function calculate(): int
     {

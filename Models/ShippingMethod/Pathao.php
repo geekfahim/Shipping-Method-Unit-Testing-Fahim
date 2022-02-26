@@ -1,25 +1,17 @@
 <?php
 
 declare(strict_types=1);
+
 namespace App\ShippingMethod;
+
+use App\ProductAbstract;
+use App\ShippingChargeInterface;
+
 require_once __DIR__ . "/../../vendor/autoload.php";
 
 
-class Pathao
+class  Pathao extends ProductAbstract implements ShippingChargeInterface
 {
-
-    protected $weight;
-    protected $volume;
-
-    public function getWeight(int $weight)
-    {
-        $this->weight = $weight;
-    }
-
-    public function getVolume(int $volume)
-    {
-        $this->volume = $volume;
-    }
 
     public function calculate(): int
     {
