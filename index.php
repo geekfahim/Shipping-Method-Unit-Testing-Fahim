@@ -5,6 +5,14 @@ namespace App;
 require_once __DIR__ . '/vendor/autoload';
 
 use App\DeliveryService\Pathao;
+use App\Entity\Product;
+use App\ValueObject\Size;
+use Weight;
+
+$product = new Product(
+    new Size('10', '2', '5'),
+    new Weight(4)
+);
 
 class Customer
 {
