@@ -1,31 +1,29 @@
 <?php
 
 declare(strict_types=1);
-
 namespace App\ShippingMethod;
-
 require_once __DIR__ . "/../../vendor/autoload.php";
 
 
 class Pathao
 {
 
-    protected $weight ;
-    protected $volume ;
+    protected $weight;
+    protected $volume;
 
     public function getWeight(int $weight)
     {
-      $this->weight = $weight;
+        $this->weight = $weight;
     }
 
     public function getVolume(int $volume)
     {
-       $this->volume = $volume;
+        $this->volume = $volume;
     }
 
-    public function calculate():int|float
+    public function calculate(): int
     {
-        return ( $this->weight*2) +( $this->volume *3);
+        return ($this->weight * 2) + ($this->volume * 3);
     }
 
 }
