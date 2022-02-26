@@ -31,13 +31,7 @@ class CostCalculator
             $amount = bcadd(
                 '100',
                 bcmul(
-                    bcmul(
-                        bcmul(
-                            $product->getSize()->getLength(),
-                            $product->getSize()->getHeight(),
-                        ),
-                        $product->getSize()->getWidth()
-                    ),
+                    $this->mathUtil->calculateVolume($product->getSize()),
                     '5'
                 )
             );
